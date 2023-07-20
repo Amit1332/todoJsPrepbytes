@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+<div class="nav-container-fluid">
+    <h1><span>Tasks </span>𝖫𝗂𝗌𝗍</h1>
+    <h1 style="display: flex;align-items: center;gap: 5px;" onclick="addNewTaskPopup()"> <div class="add-items">
+        <i class="ri-add-line"></i>
+    </div>𝖠𝖽𝖽 𝖨𝗍𝖾𝗆</h1>
+</div>
+<div class="cards-container">
+    <div class="cards">
+        
+        
+        
+    </div>  
+
+
+</div>
+
+<div class="add_new_items">
+    <h2>Add New Item</h2>
+    <input id="cardTitle" type="text">
+    <div class="add_close_button">
+        <div class="add"style="cursor: pointer;" onclick="addTripCard()">Add</div>
+        <div class="close" style="cursor: pointer;" onclick="closeTask()">Close</div>
+    </div>
+
+</div>
+
+
+<div class="blur-page">
+    <div class="gobacknav">
+        <div class="one">
+            <i class="ri-arrow-left-circle-line"></i>
+            <h1>Back</h1>
+        </div>
+        <div class="one">
+            <h1 id="singleCardTrip">Trip to bhutan</h1>
+        </div>
+            <div class="add-items" onclick="addNewTaskPopup()">
+                <i class="ri-add-line"></i>
+            </div>
+
+    </div>
+</div>
+    </div>
+    
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
