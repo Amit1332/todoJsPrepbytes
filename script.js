@@ -3,7 +3,7 @@ let container = document.querySelector(".container")
 let gobacknav =document.querySelector(".gobacknav")
 let singleCardTrip = document.querySelector("#singleCardTrip")
 let addNewItems = document.querySelector(".add_new_items")
-let blurPage = document.querySelector(".blur-page")
+let blurPage = document.getElementsByClassName("blur-page")
 
 //  Add Card Popup
 var flag =0
@@ -11,7 +11,7 @@ function addNewTaskPopup(){
 
 if(flag===0){
    addNewItems.style.display = "flex"
-   blurPage.style.display="block"
+   blurPage[0].style.display="block"
 
    flag=1
 }
@@ -30,7 +30,7 @@ else{
 
 function closeTask(){
    addNewItems.style.display = "none"
-   blurPage.style.display="none"
+   blurPage[0].style.display="none"
 flag=0
 
 }
@@ -84,6 +84,8 @@ addItem.appendChild(addicon)
 // delete card 
 deleteTask.addEventListener('click', function(){
    card.remove()
+   blurPage[1].style.display="none"
+singleCardTrip.innerText= cardTitle.value
  closeTask()
 })
 
@@ -120,7 +122,7 @@ add_new_items_in_card.appendChild(inputIt)
 add_new_items_in_card.appendChild(add_close_button_in_card)
 add_close_button_in_card.appendChild(add_in_card)
 add_close_button_in_card.appendChild(close_in_card)
-blurPage.style.display="block"
+blurPage[0].style.display="block"
 
 // onclick add crate mark item inside card
 add_in_card.addEventListener('click',function(){
@@ -149,33 +151,141 @@ item.appendChild(mark)
 // onclick close inside card item add popup
 close_in_card.addEventListener('click', function(){
    container.removeChild(add_new_items_in_card) 
-blurPage.style.display="none"
-
+blurPage[0].style.display="none"
+   
       })
 
 })
 
 
 
+let gobacknav = document.createElement("div")
+  let backbutton = document.createElement("div")
+  let backicon = document.createElement("i")
+  let backH1Text = document.createElement("h1")
+  let cardHeadingText = document.createElement("div")
+  let cardHeadingH1Text = document.createElement("h1")
+  let addItemForNewCard =document.createElement('div')
+  let addItemForNewCardicon =document.createElement('i')
+  
+  
+  // set attribute
+  
+  gobacknav.setAttribute("class","gobacknav")
+  backbutton.setAttribute("class","one")
+  backicon.setAttribute("class","ri-arrow-left-circle-line")
+  backH1Text.innerHTML="Back"
+  cardHeadingText.setAttribute("class","one")
+  cardHeadingH1Text.setAttribute("id","singleCardTrip")
+  addItemForNewCard.setAttribute("class","add-items")
+  addItemForNewCard.setAttribute("onclick","addNewTaskPopup()")
+  
+  addItemForNewCardicon.setAttribute("class","ri-add-line")
+  
+  
+  blurPage[1].appendChild(gobacknav)
+  gobacknav.appendChild(backbutton)
+  backbutton.appendChild(backicon)
+  backbutton.appendChild(backH1Text)
+  
+  gobacknav.appendChild(cardHeadingText)
+  cardHeadingText.appendChild(cardHeadingH1Text)
+  
+  gobacknav.appendChild(addItemForNewCard)
+  addItemForNewCard.appendChild(addItemForNewCardicon)
+  
+
+
+// create card heading
+
+// let gobacknav = document.createElement("div")
+// let backbutton = document.createElement("div")
+// let backicon = document.createElement("i")
+// let backH1Text = document.createElement("h1")
+// let cardHeadingText = document.createElement("div")
+// let cardHeadingH1Text = document.createElement("h1")
+// let addItemForNewCard =document.createElement('div')
+// let addItemForNewCardicon =document.createElement('i')
+
+
+
+// // set attribute
+
+// gobacknav.setAttribute("class","gobacknav")
+// backbutton.setAttribute("class","one")
+// backicon.setAttribute("class","ri-arrow-left-circle-line")
+// backH1Text.innerHTML="Back"
+// cardHeadingText.setAttribute("class","one")
+// cardHeadingH1Text.setAttribute("id","singleCardTrip")
+// addItemForNewCard.setAttribute("class","add-items")
+// addItemForNewCard.setAttribute("onclick","addNewTaskPopup()")
+
+// addItemForNewCardicon.setAttribute("class","ri-add-line")
+
+
+// blurPage[1].appendChild(gobacknav)
+// gobacknav.appendChild(backbutton)
+// backbutton.appendChild(backicon)
+// backbutton.appendChild(backH1Text)
+
+// gobacknav.appendChild(cardHeadingText)
+// cardHeadingText.appendChild(cardHeadingH1Text)
+
+// gobacknav.appendChild(addItemForNewCard)
+// addItemForNewCard.appendChild(addItemForNewCardicon)
+
+
+
+
+
+
+
 // open single card 
-card.addEventListener('click', function(e){
+h2Text.addEventListener('click', function(e){
+
+  //create card heading
+
+  
+
+
 card.style.position ="absolute"
 card.style.top="50%"
 card.style.left="50%"
 card.style.zIndex="44"
 
 card.style.transform="translate(-50%,-50%)"
-blurPage.style.display="block"
-blurPage.style.filter="blur(0px)"
-blurPage.style.backgroundColor="black"
+blurPage[1].style.display="block"
+blurPage[1].style.filter="blur(0px)"
+// blurPage.style.backgroundColor="black"
 gobacknav.style.display="flex"
-singleCardTrip.innerText= cardTitle.value
+cardHeadingH1Text.innerText= cardTitle.value
 
 
+
+
+
+
+
+
+backbutton.addEventListener('click',function(){
+   blurPage[1].style.display="none"
+   card.style.position ="relative"
+   card.style.top="0"
+   card.style.left="0"
+   card.style.transform="translate(0px,0px)"
+   gobacknav.style.display="none"
+})
 })
 
 
+
+
+
+
 }
+
+
+
 
 
 
