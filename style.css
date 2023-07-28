@@ -7,9 +7,61 @@
 body{
     min-height: 100vh;
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background:linear-gradient(45deg ,rgb(191, 158, 243),rgba(27, 62, 239, 0.664)) ;
 
+}
+
+
+.box{
+    position: fixed;
+    border-radius: 50%;
+    z-index: -2;
+
+}
+.box1{
+    height: 350px;
+    width: 350px;
+    background-color: rgb(167, 20, 220);
+    top: -5%;
+    left: -5%;
+}
+
+
+.box2{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(220, 20, 143);
+    top: 30%;
+    left: 70%;
+}
+
+
+.box3{
+    height: 120px;
+    width: 120px;
+    background-color: rgba(220, 80, 20, 0.735);
+    top: 70%;
+    left: 30%;
+}
+.box4{
+    height: 50px;
+    width: 50px;
+    background-color: rgba(20, 117, 220, 0.856);
+    bottom: 1%;
+    right: 10%;
+}
+
+
+.filter{
+    min-height: 100vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    z-index: 1;
 
 }
 
@@ -69,9 +121,10 @@ gap: 20px;
 
     height: 350px;
     width: 18%;
-    background-color: white;
+    background:linear-gradient(rgb(172, 162, 248),rgb(255, 192, 254)) ;
     border-radius: 10px;
-
+    box-shadow: 3px 3px 5px rgba(95, 94, 94, 0.737),
+    -2px -2px 5px rgb(242, 236, 247)
 
 }
 .card-items{
@@ -83,6 +136,23 @@ gap: 20px;
     position: relative;
     overflow-y:scroll;
 }
+
+.card-items::-webkit-scrollbar{
+    width: 5px;
+
+}
+.card-items::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 10px;
+  }
+   
+  .card-items::-webkit-scrollbar-thumb {
+    background-color: #490597;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
 
 .card-items .item{
    display: flex;
@@ -124,20 +194,25 @@ gap: 20px;
 .delete{
     height: 35px;
     width:35px;
-    background-color: red;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background:linear-gradient(rgba(255, 0, 0, 0.534),rgba(220, 127, 20, 0.744));
     font-size: 18px;
     cursor: pointer;
+    box-shadow: -1px -1px 5px #cbb6f3,
+    2px 2px 5px rgba(46, 45, 45, 0.737)
+    ;
+    
    
 }
 
 .add-items{
     height: 35px;
     width: 35px;
-    background-color: rgb(62, 134, 243);
+    background: linear-gradient(rgba(238, 0, 255, 0.619),rgba(0, 34, 255, 0.546));
+    box-shadow: 2px 2px 5px rgb(10, 10, 27);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -147,11 +222,12 @@ gap: 20px;
 
 }
 
+
 .add_new_items,.add_new_items_in_card{
     height: 250px;
     width: 30%;
     border-radius: 5px;
-    background-color: white;
+    background: linear-gradient(45deg,rgb(209, 116, 215),rgb(126, 138, 220));
     position: fixed;
     top: 50%;
     left: 50%;
@@ -161,36 +237,46 @@ gap: 20px;
     justify-content: space-around;
     flex-direction: column;
     padding: 20px;
-    border: .01px solid rgb(255, 55, 0);
-    box-shadow: 0px 0px 3px rgb(40, 40, 40);
+    box-shadow: -2px -2px 5px #dbbcdf,
+    3px 3px 5px #6868b0;
     z-index: 555;
 
 
 }
-
+.add_new_items h2{
+    
+    color: #6505BA;
+    }
 .add_new_items_in_card{
     display: flex;
 }
 
 .add_new_items input, .add_new_items_in_card input{
     padding: 10px 30px;
-    border: .9px solid rgb(255, 55, 0);
     border-radius: 3px;
-    box-shadow: 1px 1px 3px rgb(159, 157, 157);
+    background-color: rgb(223, 218, 218);
+    border: none;
+    box-shadow:inset 3px 3px 5px rgba(46, 45, 45, 0.737),
+    inset -3px -3px 5px rgb(255, 255, 255)
+    
+    ;
    font-size: 20px;
    text-align: center ;
 
 
 }
 .add_new_items input:focus , .add_new_items_in_card input:focus{
-   border: 1px solid rgb(255, 55, 0);
-   outline: none;
-
+    box-shadow: -2px -2px 5px rgb(255, 255, 255),
+    2px 2px 5px rgba(46, 45, 45, 0.737)
+     
+    
+    ;
+    outline: none;
 }
 
 .add_new_items_in_card h2{
+    color: #6505BA;
    text-align: center;
-   color: rgb(255, 55, 0);
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .add_close_button, .add_close_button_in_card{
@@ -201,7 +287,10 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     height: 35px;
     width: 100px;
     border-radius: 20px;
-    background-color: rgb(255, 55, 0);
+    /* background-color: rgb(255, 55, 0); */
+    box-shadow: -1px -1px 5px #cbb6f3,
+    2px 2px 5px rgba(46, 45, 45, 0.737)
+    ;
     color: white;
     display: flex;
     align-items: center;
@@ -214,13 +303,14 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     height: 35px;
     width: 100px;
     border-radius: 20px;
-    background-color: rgb(255, 55, 0);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-
+    box-shadow: -1px -1px 5px #cbb6f3,
+    2px 2px 5px rgba(46, 45, 45, 0.737)
+    ;
 }
 
 
@@ -241,7 +331,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 .blur-page{
     height: 100%;
     width: 100%;
-    background-color: rgba(244, 99, 99, 0);
+    background-color: rgba(41, 40, 40, 0.632);
     position: absolute;
     backdrop-filter: blur(5px);
     top: 0;
@@ -264,7 +354,12 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
+    color: rgb(255, 136, 0);
 }
 .gobacknav .one i{
     font-size: 30px;
+}
+#singleCardTrip{
+color: rgb(169, 71, 214);
+font-size: 30px;
 }

@@ -31,7 +31,9 @@ else{
 function closeTask(){
    addNewItems.style.display = "none"
    blurPage[0].style.display="none"
+
 flag=0
+
 
 }
 /////////////////////////////
@@ -59,7 +61,7 @@ function addTripCard(){
 deleteTask.setAttribute("id",`deltId${id}`)
 card.setAttribute("id",`cardId${id}`)
 card.setAttribute("class","card")
-h2Text.setAttribute("style","padding:12px 0px; text-align: center; color:rgb(241, 114, 114); font-weight: 400;")
+h2Text.setAttribute("style","padding:12px 0px; text-align: center; color:rgb(169, 71, 214); font-weight: 400;")
 h2Text.innerText=cardTitle.value
 cardItems.setAttribute("class", "card-items")
 cardItems.setAttribute("class", "card-items")
@@ -86,6 +88,7 @@ deleteTask.addEventListener('click', function(){
    card.remove()
    blurPage[1].style.display="none"
 singleCardTrip.innerText= cardTitle.value
+
  closeTask()
 })
 
@@ -196,48 +199,6 @@ let gobacknav = document.createElement("div")
   
 
 
-// create card heading
-
-// let gobacknav = document.createElement("div")
-// let backbutton = document.createElement("div")
-// let backicon = document.createElement("i")
-// let backH1Text = document.createElement("h1")
-// let cardHeadingText = document.createElement("div")
-// let cardHeadingH1Text = document.createElement("h1")
-// let addItemForNewCard =document.createElement('div')
-// let addItemForNewCardicon =document.createElement('i')
-
-
-
-// // set attribute
-
-// gobacknav.setAttribute("class","gobacknav")
-// backbutton.setAttribute("class","one")
-// backicon.setAttribute("class","ri-arrow-left-circle-line")
-// backH1Text.innerHTML="Back"
-// cardHeadingText.setAttribute("class","one")
-// cardHeadingH1Text.setAttribute("id","singleCardTrip")
-// addItemForNewCard.setAttribute("class","add-items")
-// addItemForNewCard.setAttribute("onclick","addNewTaskPopup()")
-
-// addItemForNewCardicon.setAttribute("class","ri-add-line")
-
-
-// blurPage[1].appendChild(gobacknav)
-// gobacknav.appendChild(backbutton)
-// backbutton.appendChild(backicon)
-// backbutton.appendChild(backH1Text)
-
-// gobacknav.appendChild(cardHeadingText)
-// cardHeadingText.appendChild(cardHeadingH1Text)
-
-// gobacknav.appendChild(addItemForNewCard)
-// addItemForNewCard.appendChild(addItemForNewCardicon)
-
-
-
-
-
 
 
 // open single card 
@@ -262,11 +223,6 @@ cardHeadingH1Text.innerText= cardTitle.value
 
 
 
-
-
-
-
-
 backbutton.addEventListener('click',function(){
    blurPage[1].style.display="none"
    card.style.position ="relative"
@@ -274,13 +230,10 @@ backbutton.addEventListener('click',function(){
    card.style.left="0"
    card.style.transform="translate(0px,0px)"
    gobacknav.style.display="none"
+   card.style.zIndex="4"
+   container.removeChild(add_new_items_in_card)
 })
 })
-
-
-
-
-
 
 }
 
