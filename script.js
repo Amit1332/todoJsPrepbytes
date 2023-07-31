@@ -4,7 +4,7 @@ let gobacknav =document.querySelector(".gobacknav")
 let singleCardTrip = document.querySelector("#singleCardTrip")
 let addNewItems = document.querySelector(".add_new_items")
 let blurPage = document.getElementsByClassName("blur-page")
-
+let noitems  =document.getElementById('noitems')
 //  Add Card Popup
 var flag =0
 function addNewTaskPopup(){
@@ -26,6 +26,7 @@ else{
 
 
 // close add card popup
+noitems.innerHTML= 'No Items In the List'
 
 function closeTask(){
    addNewItems.style.display = "none"
@@ -81,7 +82,7 @@ deleteTask.appendChild(delicon)
 operation.appendChild(addItem)
 addItem.appendChild(addicon)
 cardTitle.value = ''
-
+noitems.innerHTML= ''
 // delete card 
 deleteTask.addEventListener('click', function(){
    card.remove()
