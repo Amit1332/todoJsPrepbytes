@@ -80,7 +80,7 @@ operation.appendChild(deleteTask)
 deleteTask.appendChild(delicon)
 operation.appendChild(addItem)
 addItem.appendChild(addicon)
-
+cardTitle.value = ''
 
 // delete card 
 deleteTask.addEventListener('click', function(){
@@ -148,6 +148,7 @@ item.appendChild(mark)
 
    })
 
+   inputIt.value =''
 })
 
 // onclick close inside card item add popup
@@ -202,7 +203,7 @@ let gobacknav = document.createElement("div")
 
 // open single card 
 h2Text.addEventListener('click', function(e){
-
+   h2Text.style.cursor ="pointer"
   //create card heading
 
   
@@ -218,11 +219,12 @@ blurPage[1].style.display="block"
 blurPage[1].style.filter="blur(0px)"
 // blurPage.style.backgroundColor="black"
 gobacknav.style.display="flex"
-cardHeadingH1Text.innerText= cardTitle.value
+cardHeadingH1Text.innerText= h2Text.innerHTML
 
 
 
 backbutton.addEventListener('click',function(){
+   backbutton.style.cursor ="pointer"
    blurPage[1].style.display="none"
    card.style.position ="static"
    card.style.top="0"

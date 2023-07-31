@@ -361,6 +361,9 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     font-family: sans-serif;
     color: rgb(255, 136, 0);
 }
+.gobacknav .one:first-child{
+   cursor: pointer;
+}
 .gobacknav .one i{
     font-size: 30px;
 }
