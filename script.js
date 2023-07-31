@@ -12,7 +12,6 @@ function addNewTaskPopup(){
 if(flag===0){
    addNewItems.style.display = "flex"
    blurPage[0].style.display="block"
-
    flag=1
 }
 else{
@@ -225,12 +224,12 @@ cardHeadingH1Text.innerText= cardTitle.value
 
 backbutton.addEventListener('click',function(){
    blurPage[1].style.display="none"
-   card.style.position ="relative"
+   card.style.position ="static"
    card.style.top="0"
    card.style.left="0"
+   card.style.zIndex="21"
    card.style.transform="translate(0px,0px)"
    gobacknav.style.display="none"
-   card.style.zIndex="4"
    container.removeChild(add_new_items_in_card)
 })
 })
