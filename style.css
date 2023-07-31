@@ -132,6 +132,9 @@ gap: 20px;
     -2px -2px 5px rgb(242, 236, 247)
 
 }
+.card h2{
+   cursor: pointer;
+}
 .card-items{
     padding: 15px;
     display: flex;
