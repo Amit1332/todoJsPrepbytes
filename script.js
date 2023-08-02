@@ -111,24 +111,24 @@ findcrationpopup.style.backgroundColor = 'rgb(8, 210, 62)'
        
       }, 1000);
 // delete card 
-deleteTask.addEventListener('click', function(){
-   console.log("deleted")
-   card.remove()
-   blurPage[1].style.display="none"
+// deleteTask.addEventListener('click', function(){
+//    console.log("deleted")
+//    card.remove()
+//    blurPage[1].style.display="none"
 
- closeTask()
- findcrationpopup.setAttribute("id","creationpopup")
+//  closeTask()
+//  findcrationpopup.setAttribute("id","creationpopup")
 
- findcrationpopup.style.backgroundColor = 'rgb(255, 91, 123)'
-   findcrationpopuph1.innerHTML= 'Card Deleted Successfully'
+//  findcrationpopup.style.backgroundColor = 'rgb(255, 91, 123)'
+//    findcrationpopuph1.innerHTML= 'Card Deleted Successfully'
 
-      setTimeout(() => {
-      findcrationpopuph1.innerHTML= ''
+//       setTimeout(() => {
+//       findcrationpopuph1.innerHTML= ''
 
-      findcrationpopup.removeAttribute("id")
+//       findcrationpopup.removeAttribute("id")
        
-      }, 1000);
-})
+//       }, 1000);
+// })
 
 
 addItem.addEventListener('click', function(){
@@ -305,7 +305,24 @@ backbutton.addEventListener('click',function(){
 })
 
 
+deleteTask.addEventListener('click', function(){
+   console.log("deleted")
+   card.remove()
+   blurPage[1].style.display="none"
+   gobacknav.style.display="none"
+ closeTask()
+ findcrationpopup.setAttribute("id","creationpopup")
 
+ findcrationpopup.style.backgroundColor = 'rgb(255, 91, 123)'
+   findcrationpopuph1.innerHTML= 'Card Deleted Successfully'
+
+      setTimeout(() => {
+      findcrationpopuph1.innerHTML= ''
+
+      findcrationpopup.removeAttribute("id")
+       
+      }, 1000);
+})
 
    }
    
