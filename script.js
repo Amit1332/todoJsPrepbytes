@@ -99,7 +99,7 @@ operation.appendChild(addItem)
 addItem.appendChild(addicon)
 cardTitle.value = ''
 noitems.innerHTML= ''
-
+closeTask()
 
 findcrationpopup.style.backgroundColor = 'rgb(8, 210, 62)'
    findcrationpopuph1.innerHTML= 'Success - Card Created Successfully'
@@ -190,7 +190,8 @@ addItem.addEventListener('click', function(){
    item.appendChild(h3Text)
    item.appendChild(mark)
       h3Text.innerText=inputIt.value
-   
+     add_new_items_in_card.style.display="none"
+      blurPage[0].style.display="none"
    // onclick mark done  mark as read
       mark.addEventListener('click',function(){
          h3Text.style.textDecoration="line-through"
